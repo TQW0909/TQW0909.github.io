@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-end-rgb));
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom styles for better typography */
+@layer base {
+  h1 {
+    @apply text-4xl font-bold md:text-5xl;
+  }
+  h2 {
+    @apply text-3xl font-bold md:text-4xl;
+  }
+  h3 {
+    @apply text-2xl font-bold md:text-3xl;
+  }
+  p {
+    @apply text-gray-600;
+  }
+} 
