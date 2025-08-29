@@ -51,9 +51,9 @@ function handleFormSubmit(data: ContactFormData): void {
 
 // Smooth scrolling for navigation
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e: Event) {
+    anchor.addEventListener('click', (e: Event) => {
         e.preventDefault();
-        const href = this.getAttribute('href');
+        const href = (e.currentTarget as HTMLAnchorElement).getAttribute('href');
         if (href) {
             const target = document.querySelector(href);
             if (target) {
