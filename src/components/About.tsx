@@ -1,361 +1,217 @@
 'use client';
 
 import React from 'react';
-import { FaGraduationCap, FaCode, FaTools, FaHeart, FaJava, FaDatabase, FaCloud, FaServer, FaMicrochip, FaRobot, FaAws } from 'react-icons/fa';
-import { 
-  SiPython, SiJavascript, SiTypescript, SiCplusplus, SiR, SiRos, SiHtml5, SiCss3, 
-  SiSpringboot, SiDjango, SiFlask, SiBootstrap, SiApacheecharts, SiNextdotjs, 
-  SiNumpy, SiPytorch, SiTensorflow, SiScikitlearn, SiSpacy, 
-  SiHuggingface, SiPandas, SiArduino, SiRaspberrypi, 
-  SiMysql, SiPostgresql, SiSupabase,
-  SiKaggle, SiSwift
-} from 'react-icons/si';
-import { FaCircleInfo } from "react-icons/fa6";
-import { MdSchool, MdComputer, MdSpeed, MdDataObject, MdCloud } from 'react-icons/md';
-import { PiHandPeace } from 'react-icons/pi';
+import { FaGraduationCap, FaCode, FaHeart, FaUsers, FaServer, FaMicrochip, FaCloud, FaDatabase, FaAws, FaRobot } from 'react-icons/fa';
+import { FaJava, FaPython, FaJs, FaHtml5, FaCss3Alt, FaBootstrap } from 'react-icons/fa';
+import { SiTypescript, SiCplusplus, SiR, SiRos, SiSpringboot, SiDjango, SiFlask, SiNextdotjs, SiNumpy, SiPytorch, SiTensorflow, SiScikitlearn, SiSpacy, SiHuggingface, SiPandas, SiArduino, SiRaspberrypi, SiMysql, SiPostgresql, SiSupabase, SiSwift } from 'react-icons/si';
+import { MdCloud, MdDataObject, MdSpeed, MdComputer, MdSchool } from 'react-icons/md';
 import { CgWebsite } from 'react-icons/cg';
+import { PiHandPeace } from 'react-icons/pi';
+import { FaCircleInfo } from 'react-icons/fa6';
 
 const About: React.FC = () => {
+  const skills = {
+    "Programming Languages": [
+      { name: "Java", icon: <FaJava className="text-2xl" /> },
+      { name: "JavaScript", icon: <FaJs className="text-2xl" /> },
+      { name: "TypeScript", icon: <SiTypescript className="text-2xl" /> },
+      { name: "C/C++", icon: <SiCplusplus className="text-2xl" /> },
+      { name: "Python", icon: <FaPython className="text-2xl" /> },
+      { name: "R", icon: <SiR className="text-2xl" /> },
+      { name: "Swift", icon: <SiSwift className="text-2xl" /> },
+      { name: "Cursor", icon: <FaCode className="text-2xl" /> }
+    ],
+    "Web Development": [
+      { name: "HTML/CSS", icon: <FaHtml5 className="text-2xl" /> },
+      { name: "Spring Boot", icon: <SiSpringboot className="text-2xl" /> },
+      { name: "Django", icon: <SiDjango className="text-2xl" /> },
+      { name: "Flask", icon: <SiFlask className="text-2xl" /> },
+      { name: "Bootstrap", icon: <FaBootstrap className="text-2xl" /> },
+      { name: "Next.js", icon: <SiNextdotjs className="text-2xl" /> }
+    ],
+    "Machine Learning": [
+      { name: "PyTorch", icon: <SiPytorch className="text-2xl" /> },
+      { name: "TensorFlow", icon: <SiTensorflow className="text-2xl" /> },
+      { name: "Scikit-learn", icon: <SiScikitlearn className="text-2xl" /> },
+      { name: "SpaCy", icon: <SiSpacy className="text-2xl" /> },
+      { name: "HuggingFace", icon: <SiHuggingface className="text-2xl" /> },
+      { name: "Kaggle", icon: <FaCode className="text-2xl" /> }
+    ],
+    "Data Processing": [
+      { name: "NumPy", icon: <SiNumpy className="text-2xl" /> },
+      { name: "Pandas", icon: <SiPandas className="text-2xl" /> },
+      { name: "Matplotlib", icon: <SiNumpy className="text-2xl" /> }
+    ],
+    "Parallel Computing": [
+      { name: "CUDA", icon: <FaServer className="text-2xl" /> },
+      { name: "OpenMP", icon: <FaServer className="text-2xl" /> },
+      { name: "Pthreads", icon: <FaServer className="text-2xl" /> },
+      { name: "MPI", icon: <FaServer className="text-2xl" /> },
+      { name: "Slurm", icon: <FaServer className="text-2xl" /> },
+      { name: "HPC Environments", icon: <FaServer className="text-2xl" /> }
+    ],
+    "Hardware Design": [
+      { name: "Verilog", icon: <FaMicrochip className="text-2xl" /> },
+      { name: "QuestaSim", icon: <FaMicrochip className="text-2xl" /> },
+      { name: "Xilinx Vivado", icon: <FaMicrochip className="text-2xl" /> },
+      { name: "Cadence Virtuoso", icon: <FaMicrochip className="text-2xl" /> }
+    ],
+    "Embedded Systems": [
+      { name: "Arduino Uno", icon: <SiArduino className="text-2xl" /> },
+      { name: "Raspberry Pi", icon: <SiRaspberrypi className="text-2xl" /> },
+      { name: "Nexys A7", icon: <FaMicrochip className="text-2xl" /> },
+      { name: "ROS", icon: <SiRos className="text-2xl" /> }
+    ],
+    "Cloud & Databases": [
+      { name: "AWS", icon: <FaAws className="text-2xl" /> },
+      { name: "Azure", icon: <MdCloud className="text-2xl" /> },
+      { name: "MySQL", icon: <SiMysql className="text-2xl" /> },
+      { name: "PostgreSQL", icon: <SiPostgresql className="text-2xl" /> },
+      { name: "Supabase", icon: <SiSupabase className="text-2xl" /> }
+    ]
+  };
+
+  const interests = [
+    "Rugby", "Snowboarding", "Arts and Fashion", "Sailing", 
+    "Cooking", "Biking", "Poker", "AutoML"
+  ];
+
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="section py-20">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-900 flex items-center justify-center gap-3">
-          <FaCircleInfo className="text-blue-600" />
-          About Me
-        </h2>
-        
-        <div className="max-w-4xl mx-auto">
-          {/* Introduction */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-semibold mb-4 text-gray-800 flex items-center gap-2">
-              <MdComputer className="text-blue-600" />
-              Introduction
-            </h3>
-            <p className="text-lg text-gray-600 leading-relaxed">
-                I'm Tingqi "Ting" Wang, a Computing Engineering & Computer Science graduate from USC.
-                My specific interests are in machine learning and AI and I'm currently pursuing a Master's in AI at USC.          
-            </p>
-          </div>
+        <div className="text-center mb-16 animate-fade-in-up">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">About Me</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            A passionate computer science graduate student with expertise in machine learning, AI, 
+            computer vision, and software engineering. Always eager to learn and create innovative solutions.
+          </p>
+        </div>
 
-          {/* Education */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-semibold mb-4 text-gray-800 flex items-center gap-2">
-              <MdSchool className="text-blue-600" />
-              Education
-            </h3>
-            <div className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="mb-4">
-                <h4 className="text-xl font-medium text-gray-900 flex items-center gap-2">
-                <PiHandPeace className='text-blue-500'/>
-                  University of Southern California
-                </h4>
-                <p className="text-gray-600">Master of Science in Computer Science - Artificial Intelligence</p>
-                <p className="text-gray-500">2025 - 2027</p>
-              </div>
+        {/* Education Modules */}
+        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+          {/* Master's Degree Module */}
+          <div className="card p-8 animate-fade-in-left">
+            <div className="flex items-center gap-3 mb-6">
+              <FaGraduationCap className="text-3xl text-blue-600" />
+              <h3 className="text-2xl font-bold text-gray-900">Master's Degree</h3>
             </div>
-            <br></br>
-            <div className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="mb-4">
-                <h4 className="text-xl font-medium text-gray-900 flex items-center gap-2">
-                <PiHandPeace className='text-blue-500'/>
-                  University of Southern California
-                  
-                </h4>
-                <p className="text-gray-600">Bachelors of Science in Computer Engineering and Computer Science: Computing Systems</p>
-                <p className="text-gray-500">2021 - 2025</p>
+            
+            <div className="space-y-4">
+              <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+                <div className="p-3 bg-blue-500 text-white rounded-lg">
+                  <FaGraduationCap className="text-xl" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900">Master of Science in Computer Science: AI</h4>
+                  <p className="text-gray-600">University of Southern California</p>
+                  <p className="text-gray-600">Viterbi School of Engineering</p>
+                  <p className="text-sm text-gray-500">Expected Graduation: May 2027</p>
+                  <p className="text-sm font-semibold text-blue-600">GPA: N/A</p>
+                </div>
+              </div>
+              
+              <div className="mt-6">
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">Relevant Coursework</h4>
+                <div className="flex flex-wrap gap-2">
+                  <span className="skill-badge">Machine Learning</span>
+                  <span className="skill-badge">Deep Learning</span>
+                  <span className="skill-badge">Advanced Algorithms</span>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Skills */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-semibold mb-4 text-gray-800 flex items-center gap-2">
-              <FaCode className="text-blue-600" />
-              Technical Skills
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Programming Languages */}
-              <div className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                <h4 className="text-xl font-medium mb-3 text-gray-900 flex items-center gap-2">
-                  <FaCode className="text-blue-500" />
-                  Programming Languages
-                </h4>
-                <ul className="text-gray-600 space-y-3">
-                  <li className="flex items-center gap-2">
-                    <FaJava className="text-blue-500 text-xl" />
-                    Java
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <SiJavascript className="text-blue-500 text-xl" />
-                    JavaScript
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <SiTypescript className="text-blue-500 text-xl" />
-                    TypeScript
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <SiCplusplus className="text-blue-500 text-xl" />
-                    C/C++
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <SiPython className="text-blue-500 text-xl" />
-                    Python
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <SiR className="text-blue-500 text-xl" />
-                    R
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <SiSwift className="text-blue-500 text-xl" />
-                    Swift
-                  </li>
-                </ul>
+          {/* Undergraduate Module */}
+          <div className="card p-8 animate-fade-in-right">
+            <div className="flex items-center gap-3 mb-6">
+              <FaGraduationCap className="text-3xl text-purple-600" />
+              <h3 className="text-2xl font-bold text-gray-900">Undergraduate</h3>
+            </div>
+            
+            <div className="space-y-6">
+              <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+                <div className="p-3 bg-purple-500 text-white rounded-lg">
+                  <FaGraduationCap className="text-xl" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900">Bachelor of Science in Computer Science and Computer Engineering</h4>
+                  <p className="text-gray-600">University of Southern California</p>
+                  <p className="text-gray-600">Viterbi School of Engineering</p>
+                  <p className="text-sm text-gray-500">Graduated: May 2025</p>
+                  <p className="text-sm font-semibold text-purple-600">GPA: 3.86</p>
+                </div>
               </div>
-
-              {/* Web Development */}
-              <div className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                <h4 className="text-xl font-medium mb-3 text-gray-900 flex items-center gap-2">
-                  <CgWebsite className="text-blue-500" />
-                  Web Development
-                </h4>
-                <ul className="text-gray-600 space-y-3">
-                  <li className="flex items-center gap-2">
-                    <SiHtml5 className="text-blue-500 text-xl" />
-                    HTML/CSS
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <SiNextdotjs className="text-blue-500 text-xl" />
-                    Next.js
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <SiSpringboot className="text-blue-500 text-xl" />
-                    Spring Boot
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <SiDjango className="text-blue-500 text-xl" />
-                    Django
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <SiFlask className="text-blue-500 text-xl" />
-                    Flask
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <SiBootstrap className="text-blue-500 text-xl" />
-                    Bootstrap
-                  </li>
-                </ul>
-              </div>
-
-              {/* Machine Learning */}
-              <div className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                <h4 className="text-xl font-medium mb-3 text-gray-900 flex items-center gap-2">
-                  <FaRobot className="text-blue-500" />
-                  Machine Learning
-                </h4>
-                <ul className="text-gray-600 space-y-3">
-                  <li className="flex items-center gap-2">
-                    <SiPytorch className="text-blue-500 text-xl" />
-                    PyTorch
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <SiTensorflow className="text-blue-500 text-xl" />
-                    TensorFlow
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <SiScikitlearn className="text-blue-500 text-xl" />
-                    Scikit-learn
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <SiSpacy className="text-blue-500 text-xl" />
-                    SpaCy
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <SiHuggingface className="text-blue-500 text-xl" />
-                    HuggingFace
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <SiKaggle className="text-blue-500 text-xl" />
-                    Kaggle
-                  </li>
-                </ul>
-              </div>
-
-              {/* Data Processing */}
-              <div className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                <h4 className="text-xl font-medium mb-3 text-gray-900 flex items-center gap-2">
-                  <MdDataObject className="text-blue-500" />
-                  Data Processing
-                </h4>
-                <ul className="text-gray-600 space-y-3">
-                  <li className="flex items-center gap-2">
-                    <SiNumpy className="text-blue-500 text-xl" />
-                    NumPy
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <SiPandas className="text-blue-500 text-xl" />
-                    Pandas
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <SiApacheecharts className="text-blue-500 text-xl" />
-                    Apache Echarts
-                  </li>
-                </ul>
-              </div>
-
-              {/* Parallel Computing */}
-              <div className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                <h4 className="text-xl font-medium mb-3 text-gray-900 flex items-center gap-2">
-                  <FaServer className="text-blue-500" />
-                  Parallel Computing
-                </h4>
-                <ul className="text-gray-600 space-y-3">
-                  <li className="flex items-center gap-2">
-                    <FaServer className="text-blue-500 text-xl" />
-                    CUDA
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <FaServer className="text-blue-500 text-xl" />
-                    OpenMP
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <FaServer className="text-blue-500 text-xl" />
-                    Pthreads & MPI
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <FaServer className="text-blue-500 text-xl" />
-                    Slurm
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <MdComputer className="text-blue-500 text-xl" />
-                    HPC Environments
-                  </li>
-                </ul>
-              </div>
-
-              {/* Hardware Design */}
-              <div className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                <h4 className="text-xl font-medium mb-3 text-gray-900 flex items-center gap-2">
-                  <FaMicrochip className="text-blue-500" />
-                  Hardware Design
-                </h4>
-                <ul className="text-gray-600 space-y-3">
-                  <li className="flex items-center gap-2">
-                    <FaMicrochip className="text-blue-500 text-xl" />
-                    Verilog
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <FaMicrochip className="text-blue-500 text-xl" />
-                    Xilinx Vivado
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <FaMicrochip className="text-blue-500 text-xl" />
-                    Cadence Virtuoso
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <FaMicrochip className="text-blue-500 text-xl" />
-                    Nexys A7
-                  </li>
-                </ul>
-              </div>
-
-              {/* Embedded Systems */}
-              <div className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                <h4 className="text-xl font-medium mb-3 text-gray-900 flex items-center gap-2">
-                  <MdComputer className="text-blue-500" />
-                  Embedded Systems
-                </h4>
-                <ul className="text-gray-600 space-y-3">
-                  <li className="flex items-center gap-2">
-                    <SiArduino className="text-blue-500 text-xl" />
-                    Arduino Uno
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <SiRaspberrypi className="text-blue-500 text-xl" />
-                    Raspberry Pi
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <SiRos className="text-blue-500 text-xl" />
-                    ROS
-                  </li>
-                </ul>
-              </div>
-
-              {/* Cloud Platforms */}
-              <div className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                <h4 className="text-xl font-medium mb-3 text-gray-900 flex items-center gap-2">
-                  <FaCloud className="text-blue-500" />
-                  Cloud Platforms
-                </h4>
-                <ul className="text-gray-600 space-y-3">
-                  <li className="flex items-center gap-2">
-                    <FaAws className="text-blue-500 text-xl" />
-                    AWS
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <MdCloud className="text-blue-500 text-xl" />
-                    Azure
-                  </li>
-                </ul>
-              </div>
-
-              {/* Databases */}
-              <div className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                <h4 className="text-xl font-medium mb-3 text-gray-900 flex items-center gap-2">
-                  <FaDatabase className="text-blue-500" />
-                  Databases
-                </h4>
-                <ul className="text-gray-600 space-y-3">
-                  <li className="flex items-center gap-2">
-                    <SiMysql className="text-blue-500 text-xl" />
-                    MySQL
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <SiPostgresql className="text-blue-500 text-xl" />
-                    PostgreSQL
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <SiSupabase className="text-blue-500 text-xl" />
-                    Supabase
-                  </li>
-                </ul>
+              
+              <div className="space-y-4">
+                <h4 className="text-lg font-semibold text-gray-900">Achievements & Awards</h4>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3 p-3 bg-green-50 rounded-lg border-l-4 border-green-500">
+                    <div className="text-green-600 font-bold">🏆</div>
+                    <div>
+                      <h5 className="font-semibold text-gray-900">Viterbi Dean's List</h5>
+                      <p className="text-sm text-gray-600">8 Semesters</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-orange-50 rounded-lg border-l-4 border-orange-500">
+                    <div className="text-orange-600 font-bold">🏅</div>
+                    <div>
+                      <h5 className="font-semibold text-gray-900">2023 Viterbi Engineering Mathematics Prize</h5>
+                      <p className="text-sm text-gray-600">Excellence in Calculus - One of two students awarded</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Interests */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-semibold mb-4 text-gray-800 flex items-center gap-2">
-              <FaHeart className="text-blue-600" />
-              Interests & Hobbies
-            </h3>
-            <div className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="text-center p-3 bg-white rounded-lg shadow-sm">
-                  <span className="text-blue-600 font-medium">Rugby</span>
-                </div>
-                <div className="text-center p-3 bg-white rounded-lg shadow-sm">
-                  <span className="text-blue-600 font-medium">Snowboarding</span>
-                </div>
-                <div className="text-center p-3 bg-white rounded-lg shadow-sm">
-                  <span className="text-blue-600 font-medium">Fashion</span>
-                </div>
-                <div className="text-center p-3 bg-white rounded-lg shadow-sm">
-                  <span className="text-blue-600 font-medium">Sailing</span>
-                </div>
-                <div className="text-center p-3 bg-white rounded-lg shadow-sm">
-                  <span className="text-blue-600 font-medium">Cooking</span>
-                </div>
-                <div className="text-center p-3 bg-white rounded-lg shadow-sm">
-                  <span className="text-blue-600 font-medium">Poker</span>
-                </div>
-                <div className="text-center p-3 bg-white rounded-lg shadow-sm">
-                  <span className="text-blue-600 font-medium">TCG</span>
-                </div>
-                <div className="text-center p-3 bg-white rounded-lg shadow-sm">
-                  <span className="text-blue-600 font-medium">AutoML</span>
+        {/* Skills Section */}
+        <div className="mt-16">
+          <div className="text-center mb-12 animate-fade-in-up">
+            <h3 className="text-3xl font-bold mb-4 gradient-text">Skills & Technologies</h3>
+            <p className="text-gray-600">A comprehensive toolkit for building innovative solutions</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {Object.entries(skills).map(([category, skillList], categoryIndex) => (
+              <div key={category} className="card p-6 animate-fade-in-up" style={{ animationDelay: `${categoryIndex * 100}ms` }}>
+                <h4 className="text-lg font-semibold text-gray-900 mb-4 text-center">{category}</h4>
+                <div className="space-y-3">
+                  {skillList.map((skill, skillIndex) => (
+                    <div 
+                      key={skill.name} 
+                      className="flex items-center gap-3 p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-all duration-300 hover-lift"
+                    >
+                      <div className="text-blue-600">{skill.icon}</div>
+                      <span className="text-sm font-medium text-gray-700">{skill.name}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Interests Section */}
+        <div className="mt-16">
+          <div className="text-center mb-8 animate-fade-in-up">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <FaHeart className="text-3xl text-red-500" />
+              <h3 className="text-3xl font-bold gradient-text">Interests & Hobbies</h3>
             </div>
+            <p className="text-gray-600">Beyond coding and research</p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+            {interests.map((interest, index) => (
+              <div 
+                key={interest}
+                className="card p-4 text-center hover-lift animate-fade-in-up"
+                style={{ animationDelay: `${index * 50}ms` }}
+              >
+                <span className="text-gray-700 font-medium">{interest}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
